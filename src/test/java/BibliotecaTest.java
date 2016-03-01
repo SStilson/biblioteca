@@ -1,5 +1,6 @@
 import com.thoughtworks.biblioteca.Biblioteca;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.io.PrintStream;
 
@@ -15,11 +16,13 @@ public class BibliotecaTest {
 
     @Before
     public void setUp() {
-        this.biblioteca = new Biblioteca(System.out) ;
         this.printStream = mock(PrintStream.class) ;
+        this.biblioteca = new Biblioteca(printStream) ;
     }
 
-    public void testWelcomeMessage() {
+    @Test
+    public void shouldPrintWelcomeMessageWhenStarted() {
         biblioteca.printWelcomeMessage();
+        verify(printStream).println("Welcome to Biblioteca");
     }
 }

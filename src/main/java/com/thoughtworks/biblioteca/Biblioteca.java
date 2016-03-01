@@ -14,6 +14,6 @@ public class Biblioteca {
     }
 
     public void printWelcomeMessage() {
-        //System.out.println("Welcome to Biblioteca") ;
+        printStream.println("Welcome to Biblioteca") ;
     }
 }
