@@ -2,24 +2,18 @@ package com.thoughtworks.biblioteca;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-/**
- * Created by Adam on 3/1/16.
- */
 public class Biblioteca {
 
+    private ArrayList<Book> bookList;
+    private MainMenu menu;
     private PrintStream printStream ;
-    private ArrayList<String> books;
 
-    /*public Biblioteca(PrintStream printStream) {
-        this.printStream = printStream ;
-        this.books = new ArrayList<String>();
-    }*/
 
-    public Biblioteca(PrintStream printStream, ArrayList<String> bookList) {
-        this.printStream = printStream ;
-        this.books = bookList;
+    public Biblioteca(PrintStream printStream, ArrayList<Book> bookList, MainMenu menu) {
+        this.printStream = printStream;
+        this.bookList = bookList;
+        this.menu = menu;
     }
 
     public void printWelcomeMessage() {
@@ -27,8 +21,12 @@ public class Biblioteca {
     }
 
     public void printBookList() {
-        for (String book : books) {
-            printStream.println(book);
+        for (Book book : bookList) {
+            book.print();
         }
+    }
+
+    public void displayMainMenu() {
+        this.menu.display();
     }
 }
