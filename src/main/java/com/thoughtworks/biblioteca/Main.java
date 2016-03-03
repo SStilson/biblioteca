@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         PrintStream printStream = System.out;
-        MainMenu menu = new MainMenu();
+        MainMenu menu = new MainMenu(printStream, biblioteca);
         Biblioteca biblioteca = new Biblioteca(printStream, books(printStream), menu);
         biblioteca.printWelcomeMessage();
         biblioteca.displayMainMenu();

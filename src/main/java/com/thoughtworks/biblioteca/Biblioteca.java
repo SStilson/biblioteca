@@ -27,6 +27,6 @@ public class Biblioteca {
     }
 
     public void displayMainMenu() {
-        this.menu.display();
+        menu.display();
     }
 }
